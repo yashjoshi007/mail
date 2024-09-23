@@ -1,0 +1,13 @@
+{
+  "name": "email-api-vercel",
+  "version": "1.0.0",
+  "description": "A serverless email API using Vercel and Nodemailer",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
