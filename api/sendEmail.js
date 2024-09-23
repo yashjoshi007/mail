@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
   const { name, email, message, mobile } = req.body;
@@ -8,15 +8,15 @@ export default async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: "rajanp2311@gmail.com",  // Use environment variables
-        pass: "hiukznmmpdewmcco",
+        user: process.env.EMAIL_USER,  // Use environment variables
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Define email options
     const mailOptions = {
-      from: "rajanp2311@gmail.com",
-      to: "rajanp2311@gmail.com",  // Change this to your intended recipient
+      from: process.env.EMAIL_USER,  // Use environment variable for sender
+      to: process.env.EMAIL_USER,      // Change this to your intended recipient
       subject: 'Query/Feedback from CareerHook!',
       html: `
         <h3>New Contact Form Submission</h3>
